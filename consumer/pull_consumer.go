@@ -442,7 +442,7 @@ func (pc *defaultPullConsumer) pull(ctx context.Context, mq *primitive.MessageQu
 
 	pc.subscriptionAutomatically(mq.Topic)
 
-	sysFlag := buildSysFlag(false, true, true, false)
+	sysFlag := buildSysFlag(false, false, true, false)
 
 	pullResp, err := pc.pullInner(ctx, mq, data, offset, numbers, sysFlag, 0)
 	if err != nil {
